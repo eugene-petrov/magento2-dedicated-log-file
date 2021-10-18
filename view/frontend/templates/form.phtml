@@ -1,0 +1,28 @@
+<?php
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ * @var Magento\Framework\Escaper $escaper
+ */
+?>
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "snippet-dedicated-log-file-manager": {
+                    "component": "Snippet_DedicatedLogFile/js/dedicated-log-file-manager",
+                    "template": "Snippet_DedicatedLogFile/dedicated_log_file_manager",
+                    "config": {
+                        "ajaxUrl": "<?= $escaper->escapeHtml($block->getUrl('snippet/log/addRow')) ?>"
+                    }
+                }
+            }
+        }
+    }
+}
+</script>
+
+<div data-bind="scope: 'snippet-dedicated-log-file-manager'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
