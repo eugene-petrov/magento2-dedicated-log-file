@@ -8,6 +8,7 @@ use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\ActionInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Data\Form\FormKey\Validator;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Message\ManagerInterface;
@@ -58,9 +59,9 @@ class AddRow implements ActionInterface
     }
 
     /**
-     * @inheritDoc
+     * @return ResultInterface
      */
-    public function execute()
+    public function execute(): ResultInterface
     {
         $result = $this->resultFactory->create(ResultFactory::TYPE_JSON);
         try {
